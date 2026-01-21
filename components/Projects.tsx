@@ -6,21 +6,21 @@ const Projects = () => {
     const projects = [
         {
             title: 'IMDB Clone',
-            desc: 'Productivity application for tracking tasks and collaborating with teams. Includes drag-and-drop features.',
+            desc: 'IMDb is a full stack application that allows users to browse various movies, view their details, and add them to a wishlist for future viewing.',
             tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
             image: '/assets/project-1.png',
             deploy: 'https://ankit-imdb-clone7788.netlify.app/'
         },
         {
             title: 'E-commerce',
-            desc: 'A comprehensive admin dashboard for managing products, orders, and analytics. Built with React.js and Tailwind.',
+            desc: 'E-commerce is a frontend application that allows users to browse products, add them to cart, and view their details.',
             tags: ['React.js', 'Tailwind', 'Context API'],
             image: '/assets/project-2.jpg',
             deploy: 'https://a-kartshop-com.netlify.app/'
         },
         {
             title: 'Spotify Clone',
-            desc: 'A real-time social platform featuring posts, likes, and comments. fully responsive and interactive.',
+            desc: 'Spotify Clone is fully responsive, and users can browse music albums, search for tracks, and enjoy a seamless experience across devices.',
             tags: ['React.js', 'Redux Toolkit', 'Firebase', 'Tailwind'],
             image: '/sp-2.jfif',
             deploy: 'https://spotify-clone-oeqr.onrender.com/'
