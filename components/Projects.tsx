@@ -1,31 +1,46 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Image from 'next/image';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+
+interface Project {
+    title: string;
+    desc: string;
+    tags: string[];
+    image: string;
+    deploy: string;
+}
+
+const projects: Project[] = [
+    {
+        title: 'IMDB Clone',
+        desc: 'IMDb is a full stack application that allows users to browse various movies, view their details, and add them to a wishlist for future viewing.',
+        tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
+        image: '/assets/project-1.png',
+        deploy: 'https://ankit-imdb-clone7788.netlify.app/'
+    },
+    {
+        title: 'E-commerce',
+        desc: 'E-commerce is a frontend application that allows users to browse products, add them to cart, and view their details.',
+        tags: ['React.js', 'Tailwind', 'Context API'],
+        image: '/assets/project-2.jpg',
+        deploy: 'https://a-kart-07.netlify.app/'
+    },
+    {
+        title: 'Spotify Clone',
+        desc: 'Spotify Clone is fully responsive, and users can browse music albums, search for tracks, and enjoy a seamless experience across devices.',
+        tags: ['React.js', 'Redux Toolkit', 'Firebase', 'Tailwind'],
+        image: '/sp-2.jfif',
+        deploy: 'https://spotify-clone-oeqr.onrender.com/'
+    },
+];
 
 const Projects = () => {
-    const projects = [
-        {
-            title: 'IMDB Clone',
-            desc: 'IMDb is a full stack application that allows users to browse various movies, view their details, and add them to a wishlist for future viewing.',
-            tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
-            image: '/assets/project-1.png',
-            deploy: 'https://ankit-imdb-clone7788.netlify.app/'
-        },
-        {
-            title: 'E-commerce',
-            desc: 'E-commerce is a frontend application that allows users to browse products, add them to cart, and view their details.',
-            tags: ['React.js', 'Tailwind', 'Context API'],
-            image: '/assets/project-2.jpg',
-            deploy: 'https://a-kartshop-com.netlify.app/'
-        },
-        {
-            title: 'Spotify Clone',
-            desc: 'Spotify Clone is fully responsive, and users can browse music albums, search for tracks, and enjoy a seamless experience across devices.',
-            tags: ['React.js', 'Redux Toolkit', 'Firebase', 'Tailwind'],
-            image: '/sp-2.jfif',
-            deploy: 'https://spotify-clone-oeqr.onrender.com/'
-        },
-    ];
+    const [expandedIdx, setExpandedIdx] = useState<number | null>(null);
+
+    const handleExpand = (idx: number) => {
+        setExpandedIdx(expandedIdx === idx ? null : idx);
+    };
 
     return (
         <section id="projects" className="py-20 bg-black/30">
@@ -39,12 +54,12 @@ const Projects = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, idx) => (
-                        <div key={idx} className="group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+                        <article key={idx} className="group relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-primary/50 transition-all duration-300 hover:scale-105">
                             {/* Image Area */}
                             <a href={project.deploy} target="_blank" rel="noopener noreferrer" className="block h-48 w-full relative overflow-hidden">
                                 <Image
                                     src={project.image}
-                                    alt={project.title}
+                                    alt={`Screenshot of ${project.title}`}
                                     fill
                                     className="object-cover transition-transform duration-500"
                                 />
@@ -54,19 +69,33 @@ const Projects = () => {
 
                             <div className="p-6">
                                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                                <p className="text-gray-400 text-sm mb-6 line-clamp-3">
-                                    {project.desc}
-                                </p>
+                                <div className="mb-6">
+                                    <p className={`text-gray-400 text-sm ${expandedIdx === idx ? '' : 'line-clamp-3'}`}>
+                                        {project.desc}
+                                    </p>
+                                    {project.desc.length > 60 && (
+                                        <button
+                                            className="text-primary text-xs mt-1 focus:outline-none hover:underline"
+                                            onClick={() => handleExpand(idx)}
+                                            aria-label={expandedIdx === idx ? 'Show less' : 'Show more'}
+                                        >
+                                            {expandedIdx === idx ? 'Show less' : 'Show more'}
+                                        </button>
+                                    )}
+                                </div>
 
                                 <div className="flex flex-wrap gap-2">
                                     {project.tags.map((tag, tagIdx) => (
-                                        <span key={tagIdx} className="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-300 border border-white/5">
+                                        <span
+                                            key={tagIdx}
+                                            className="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-300 border border-white/5 transition-colors duration-200 hover:bg-primary/20 hover:text-primary"
+                                        >
                                             {tag}
                                         </span>
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     ))}
                 </div>
             </div>
@@ -75,3 +104,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
