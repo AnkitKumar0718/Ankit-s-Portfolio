@@ -13,25 +13,32 @@ interface Project {
 
 const projects: Project[] = [
     {
-        title: 'IMDB Clone',
-        desc: 'IMDb is a full stack application that allows users to browse various movies, view their details, and add them to a wishlist for future viewing.',
-        tags: ['React.js', 'Node.js', 'MongoDB', 'Express.js'],
-        image: '/assets/project-1.png',
-        deploy: 'https://ankit-imdb-clone7788.netlify.app/'
+        title: 'Movie App',
+        desc: 'It is a full stack application that allows users to browse various movies, add them to a wishlist for future viewing.',
+        tags: ['React.js', 'Firebase', 'Tailwind', 'React-Libraries'],
+        image: '/movie.png',
+        deploy: 'https://ak-07-movieapp.netlify.app/'
     },
     {
         title: 'E-commerce',
         desc: 'E-commerce is a frontend application that allows users to browse products, add them to cart, and view their details.',
-        tags: ['React.js', 'Tailwind', 'Context API'],
+        tags: ['React.js', 'Firebase', 'Tailwind',],
         image: '/assets/project-2.jpg',
         deploy: 'https://a-kart-07.netlify.app/'
     },
+    // {
+    //     title: 'Spotify Clone',
+    //     desc: 'Spotify Clone is fully responsive, and users can browse music albums, search for tracks, and enjoy a seamless experience across devices.',
+    //     tags: ['React.js', 'Redux Toolkit', 'Firebase', 'Tailwind'],
+    //     image: '/sp-5.webp',
+    //     deploy: 'https://spotify-clone-oeqr.onrender.com/'
+    // },
     {
-        title: 'Spotify Clone',
-        desc: 'Spotify Clone is fully responsive, and users can browse music albums, search for tracks, and enjoy a seamless experience across devices.',
-        tags: ['React.js', 'Redux Toolkit', 'Firebase', 'Tailwind'],
-        image: '/sp-2.jfif',
-        deploy: 'https://spotify-clone-oeqr.onrender.com/'
+        title: 'Weather App',
+        desc: 'It is a frontend application made using Open weather API. User can check weather of any city across the globe ',
+        tags: ['React.js', 'Weather API', 'Tailwind'],
+        image: '/wapp.png',
+        deploy: 'https://ak-07-weatherapp.netlify.app/'
     },
 ];
 
@@ -84,15 +91,25 @@ const Projects = () => {
                                     )}
                                 </div>
 
-                                <div className="flex flex-wrap gap-2">
-                                    {project.tags.map((tag, tagIdx) => (
-                                        <span
-                                            key={tagIdx}
-                                            className="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-300 border border-white/5 transition-colors duration-200 hover:bg-primary/20 hover:text-primary"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
+                                <div className="flex items-center justify-between mt-auto">
+                                    <div className="flex flex-wrap gap-2">
+                                        {project.tags.map((tag, tagIdx) => (
+                                            <span
+                                                key={tagIdx}
+                                                className="px-3 py-1 text-xs rounded-full bg-white/5 text-gray-300 border border-white/5 transition-colors duration-200 hover:bg-primary/20 hover:text-primary"
+                                            >
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <a
+                                        href={project.deploy}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary/80 transition-all duration-300"
+                                    >
+                                        View
+                                    </a>
                                 </div>
                             </div>
                         </article>

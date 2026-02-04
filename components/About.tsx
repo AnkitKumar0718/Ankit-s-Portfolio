@@ -3,11 +3,11 @@ import { Code2, Cpu, Globe, Palette } from 'lucide-react';
 
 const About = () => {
     const skills = [
-        { name: 'Next.js', level: '90%' },
+        { name: 'Next.js', level: '85%' },
         { name: 'React', level: '90%' },
         { name: 'TypeScript', level: '85%' },
-        { name: 'Tailwind CSS', level: '95%' },
-        { name: 'Node.js', level: '5v 0%' },
+        { name: 'Tailwind CSS', level: '90%' },
+        { name: 'Node.js', level: '60%' },
     ];
 
     const cards = [
