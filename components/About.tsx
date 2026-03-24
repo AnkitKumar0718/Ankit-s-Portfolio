@@ -31,9 +31,10 @@ const About = () => {
                     {/* Left Col: Bio & Cards */}
                     <div className="space-y-8">
                         <p className="text-gray-300 leading-relaxed text-lg">
-                            I am a motivated <span className="text-white font-semibold">B.Tech Graduate</span> and a passionate Web Developer.
-                            I specialize in building dynamic web applications using the latest technologies.
-                            My journey in web development is driven by a desire to create intuitive and impactful digital experiences.
+                            I am a <span className="text-white font-semibold">Full Stack Developer</span> with industry experience in building web applications using Next.js,
+                            React.js,Typescript, JavaScript, Redux, and Tailwind CSS. Additionally, developed backend applications
+                            using Node.js and Express.js through academic projects, establishing a solid foundation in
+                            full stack development.
                         </p>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
