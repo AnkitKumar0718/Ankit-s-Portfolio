@@ -32,7 +32,7 @@ const Hero = () => {
                             View Work
                             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                         </a>
-                        <a href="https://drive.google.com/file/d/1_mzccpeOuxtkT5jnd7FrTYmGiVr-hc0c/view?usp=sharing" download className="px-8 py-3 rounded-full border border-gray-700 hover:border-white/50 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
+                        <a href="https://drive.google.com/file/d/1_9QstI6KvX6d4uFWTfRbvz7hSygYiWoZ/view?usp=sharing" download className="px-8 py-3 rounded-full border border-gray-700 hover:border-white/50 hover:bg-white/5 transition-all text-white font-medium flex items-center justify-center">
                             Download Resume
                         </a>
                     </div>

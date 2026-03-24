@@ -7,7 +7,7 @@ const About = () => {
         { name: 'React', level: '90%' },
         { name: 'TypeScript', level: '85%' },
         { name: 'Tailwind CSS', level: '90%' },
-        { name: 'Node.js', level: '60%' },
+        { name: 'Node.js', level: '70%' },
     ];
 
     const cards = [
